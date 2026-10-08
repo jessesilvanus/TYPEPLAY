@@ -1,169 +1,208 @@
-# TYPEPLAY
+# 🎹 TYPEPLAY
 
-TYPEPLAY is a browser-based touch-typing application built around deliberate practice. It combines guided lessons, configurable practice sessions, timed tests, persistent local progress, and an optional original procedural piano typing mode.
+### An interactive typing experience built around learning, music, and experimentation.
 
-No account, backend, database, or third-party music is required. User data is stored only in the browser through `localStorage`.
+[🚀 Live Demo](https://typeplay-omega.vercel.app/)
 
-## Implemented features
+TYPEPLAY is a browser-based touch-typing learning and practice platform built around deliberate practice.
 
-- **Practice mode** with six original passages and 15, 30, 60, or 120 second sessions.
-- **Timed typing tests** with 15, 30, 60, 120, or 300 second durations and continuously generated original test text.
-- **Nine-lesson touch-typing curriculum** with prerequisites, saved lesson progress, attempt history, best scores, and unlocks.
-- **Shared typing engine** that tracks per-character correctness, backspace corrections, elapsed time, WPM, accuracy, and completion state.
-- **Persistent session history** for genuinely completed Practice and Timed Test sessions, including a progress dashboard with aggregates, a recent-performance chart, and recent attempts.
-- **Settings** for locally saved audio volumes, selected music mode, reduced motion, and theme preference.
-- **Music / Play mode** that reuses the typing engine and generates original piano-like feedback with the browser Web Audio API.
-- **Responsive, keyboard-accessible UI** with a shared page shell, interactive keyboard guidance, and touch-typing finger guidance.
-- **Automated regression tests** for core typing, metrics, persistence stores, safe audio catalog/mapping logic, and focused Progress page behavior.
+It combines guided lessons, configurable practice sessions, timed tests, persistent local progress, performance tracking, and an optional original procedural piano typing mode.
 
-## Routes
+> **TYPEPLAY isn't just another typing test. It's an experiment in combining technology, learning, interaction, and music to build something of my own.**
 
-| Route | Purpose |
-| --- | --- |
-| `/` | Home page and primary navigation |
-| `/practice` | Configurable typing-practice sessions |
-| `/learn` | Nine-lesson touch-typing curriculum |
-| `/learn/:lessonId` | Individual lesson session |
-| `/test` | Timed typing test |
-| `/progress` | Saved session history and lesson progress |
-| `/settings` | Local audio, motion, and theme preferences |
-| `/music` | Original procedural piano typing mode |
+---
 
-Unknown client-side routes render the not-found page.
+## 🎵 Why I Built TYPEPLAY
 
-## Technology
+I wanted to build something that was more than just another conventional typing-test website.
 
-- **React 19** and **TypeScript**
-- **Vite 8** for development and production builds
-- **React Router** for client-side routes
-- **Zustand** with persistence middleware for browser-local state
-- **Tailwind CSS v4** through the Vite plugin, plus project CSS tokens and component styles
-- **Lucide React** and **React Icons** for interface icons
-- Native **Web Audio API** for procedural piano feedback
-- **Vitest**, **jsdom**, and **React Testing Library** for automated tests
-- **Oxlint** for linting
+I've always been interested in **music, technology, interactive experiences, and experimenting with ideas**. TYPEPLAY became a way to bring those interests together into one project.
 
-## Getting started
+The original idea was simple:
 
-### Prerequisites
+> **What if typing could feel less like simply pressing keys and more like interacting with an instrument?**
 
-Install a supported Node.js release and npm. This project was last verified with Node.js 24 and npm 11.
+That idea gradually evolved into a complete typing platform with structured lessons, practice sessions, timed challenges, performance tracking, persistent progress, and a piano-inspired audio experience.
 
-### Install and run
+A major part of the project was also about learning by building. Rather than simply following a tutorial and reproducing an existing application, I wanted to take an idea, experiment with it, solve the problems that came along the way, and turn it into something people could actually use.
 
-```bash
-npm install
-npm run dev
-```
+TYPEPLAY is still an evolving project. There are ideas I want to explore further, especially around music, interaction, learning, and making the experience feel more engaging.
 
-Vite prints the local development URL in the terminal, commonly `http://localhost:5173`.
+---
 
-## Commands
+## ✨ What TYPEPLAY Offers
 
-| Command | Description |
-| --- | --- |
-| `npm run dev` | Start the Vite development server |
-| `npm run build` | Type-check the project and create a production build in `dist/` |
-| `npm run preview` | Serve the existing production build locally |
-| `npm run lint` | Run Oxlint |
-| `npm test` | Run Vitest in watch mode |
-| `npm run test:run` | Run the test suite once |
+### ⌨️ Touch Typing
 
-Run the complete verification sequence with:
+- Interactive touch-typing lessons
+- Nine structured lessons
+- Home-row practice
+- Left and right hand training
+- Top and bottom row training
+- Key combinations
+- Words
+- Sentences
+- Speed practice
+- Visual keyboard guidance
+- Finger guidance
+- Lesson prerequisites and unlocks
+- Saved lesson progress
+- Best scores and attempt history
 
-```bash
-npm run test:run
-npm run build
-npm run lint
-```
+### ⚡ Practice & Testing
 
-## Project structure
+- Configurable Practice Mode
+- Six original practice passages
+- 15, 30, 60, or 120 second practice sessions
+- Timed Typing Tests
+- 15, 30, 60, 120, or 300 second test durations
+- Continuously generated original test text
+- WPM calculation
+- Accuracy calculation
+- Correct / wrong / total keystroke statistics
+- Missed typing metrics where supported
+- Completion tracking
+
+### 📊 Progress
+
+- Persistent learning progress
+- Practice history
+- Timed-test history
+- Completed sessions
+- Average WPM
+- Best WPM
+- Average accuracy
+- Total typing time
+- Recent attempts
+- Performance visualization
+
+### ⚙️ Settings
+
+- Music/audio enable or disable
+- Music volume
+- Typing sound volume
+- Reduced-motion preference
+- Theme preference
+- Browser-local persistence
+
+### 🎹 Music / Play Mode
+
+TYPEPLAY also includes an experimental Music / Play mode that combines typing with procedural piano-like audio.
+
+Instead of relying on downloaded recordings or copyrighted music, the application generates the audio directly in the browser using the native **Web Audio API**.
+
+Different keyboard characters can map deterministically to different musical notes, creating a typing experience that feels closer to interacting with an instrument.
+
+---
+
+# 🎵 The Music Experiment
+
+This is one of the parts of TYPEPLAY that I personally enjoyed experimenting with the most.
+
+I didn't want to simply add a background music file and call it a music feature.
+
+Instead, I experimented with the **Web Audio API** to generate piano-like sounds programmatically inside the browser.
+
+The system uses:
+
+- Oscillators
+- Gain envelopes
+- Harmonic synthesis
+- Deterministic key-to-note mapping
+- Lazy audio initialization
+- Browser-native audio processing
+
+The idea was:
+
+**Typing + Music + Interaction = a more interesting learning experience.**
+
+The audio system is intentionally based on original procedural synthesis rather than recorded or copyrighted music.
+
+The project is designed so the music/audio system can continue evolving in the future.
+
+---
+
+## 🧠 Learning Experience
+
+TYPEPLAY is designed around gradual touch-typing development.
+
+The current curriculum contains nine lessons:
+
+| # | Lesson |
+|---|---|
+| 1 | Home Row |
+| 2 | Left Hand |
+| 3 | Right Hand |
+| 4 | Top Row |
+| 5 | Bottom Row |
+| 6 | Combinations |
+| 7 | Words |
+| 8 | Sentences |
+| 9 | Speed Practice |
+
+Lessons build progressively from individual keys toward words, sentences, and speed-oriented practice.
+
+Prerequisites and lesson progress are stored locally so the learning experience can continue across browser sessions.
+
+---
+
+## 📊 Progress & History
+
+TYPEPLAY keeps performance data locally in the browser.
+
+Users can view:
+
+- Completed sessions
+- Average WPM
+- Best WPM
+- Accuracy
+- Total typing time
+- Recent attempts
+- Practice history
+- Timed-test history
+- Learning progress
+
+> Current progress, settings, and history use browser-local storage. There is currently no account, backend, database, or cloud synchronization system.
+
+This means a new browser or device starts with a fresh local state.
+
+---
+
+## 🛠️ Technology
+
+| Technology | Purpose |
+|---|---|
+| **React 19** | Frontend UI |
+| **TypeScript** | Type-safe development |
+| **Vite 8** | Development and production builds |
+| **React Router** | Client-side routing |
+| **Zustand** | State management and persistence |
+| **Tailwind CSS v4** | Styling |
+| **Lucide React / React Icons** | Interface icons |
+| **Web Audio API** | Procedural piano/audio synthesis |
+| **Vitest** | Automated testing |
+| **jsdom** | Browser-like testing environment |
+| **React Testing Library** | UI testing |
+| **Oxlint** | Linting |
+| **Vercel** | Deployment |
+
+---
+
+## 🏗️ Project Architecture
 
 ```text
 src/
-├── audio/        # Web Audio wrapper, procedural piano synth, key map, track catalog
+├── audio/        # Web Audio wrapper, piano synth, key mapping, track catalog
 ├── components/   # Shared layout, home, and learning UI components
-├── data/         # Original passages, lessons, and keyboard/finger mappings
+├── data/         # Original passages, lessons, keyboard/finger mappings
 ├── engines/      # Framework-independent TypingEngine
-├── hooks/        # React integrations for the engine, learning, and media preferences
+├── hooks/        # React integrations for engine, learning, and preferences
 ├── pages/        # Route-level screens
 ├── stores/       # Persisted Zustand settings, learning, and history stores
 ├── styles/       # Global styles and design tokens
 ├── test/         # Shared jsdom setup
 ├── types/        # Domain and application type definitions
 └── utils/        # Typing metric helpers
+
 public/
-└── favicon.svg   # Application favicon
-```
-
-Tests live alongside the modules they exercise, with a shared browser-like setup in `src/test/setup.ts`.
-
-## Typing engine and metrics
-
-`src/engines/TypingEngine.ts` is intentionally independent of React. React pages use it through `src/hooks/useTypingEngine.ts`.
-
-The engine tracks the authoritative status of every character. Both correct and incorrect printable input advance the cursor; backspace reopens the prior character and counts as a keystroke. A session completes only when the configured timer completes or the public `complete()` API is used.
-
-Current metric definitions are:
-
-- **WPM:** `(correct characters × 12) / elapsed seconds`
-- **Accuracy:** `(correct characters / total keystrokes) × 100`
-
-Both values are rounded to one decimal place by the metric helpers.
-
-## Local persistence
-
-Zustand persistence writes data to browser `localStorage` under these keys:
-
-- `typeplay:settings`
-- `typeplay:learning`
-- `typeplay:history`
-
-Only serializable data fields are persisted; store action functions are not. The history store validates and normalizes persisted attempt records during hydration, ignores malformed records, sorts valid records newest first, and retains at most 200 attempts.
-
-Clearing browser storage resets locally saved settings, learning progress, and session history.
-
-## Audio architecture
-
-Music / Play mode uses only original, procedural browser audio:
-
-- `AudioEngine` creates and resumes an `AudioContext` lazily.
-- `PianoSynth` builds piano-like notes from oscillator and gain nodes, then disconnects them after release.
-- `keyNoteMap.ts` maps supported keyboard characters deterministically to notes.
-- `tracks.ts` is a metadata catalog; it does not contain downloaded music or copyrighted recordings.
-
-Audio is intentionally not created or played on page load. It is unlocked only after a user interaction such as enabling sound, starting a session, or typing. Browser autoplay policies and audio-device behavior vary, so audible output requires a manual browser check.
-
-## Testing
-
-The test suite uses Vitest with jsdom. It covers:
-
-- `TypingEngine` lifecycle, input, correction, timing, and reset behavior
-- WPM, accuracy, session-stat, and consistency helpers
-- Settings, learning, and history-store persistence behavior
-- History hydration safeguards for malformed stored records
-- Deterministic piano key mapping and track catalog logic
-- Progress-page empty and populated session-history states
-
-Tests deliberately do **not** assert that audible Web Audio output was physically heard. That remains a manual browser test.
-
-Vitest runs in a single forked worker as configured in `vite.config.ts` for stable execution in this environment.
-
-## Current limits and future ideas
-
-The following are deliberately not implemented in the current application:
-
-- A completed Finger Visualization experience
-- Backend services, accounts, authentication, cloud sync, or a database
-- Achievements, XP, AI/adaptive learning, falling-letter gameplay, or 3D/Three.js features
-- Recorded, copyrighted, downloaded, or streaming music
-- A fully applied light or system theme palette; the preference is stored for future styling work
-- Full original background-track playback; the currently available sound mode is procedural typing-piano feedback
-
-These are future considerations, not promised features.
-
-## Verification status
-
-The automated suite, production build, and linter should be run after changes using the commands above. Automated checks validate source behavior but do not substitute for a manual browser walkthrough.
-
-**Not runtime verified.** In particular, visual route behavior and actual audible piano output need manual browser verification.
+└── favicon.svg
