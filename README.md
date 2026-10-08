@@ -206,15 +206,3 @@ src/
 
 public/
 └── favicon.svg
-
-👨‍💻 About the Creator
-Jesse Silvanus
-TYPEPLAY is a personal project built around my interest in:
-Music • Technology • Interaction • Design • Experimentation
-I enjoy taking an idea, experimenting with it, solving the problems that come with it, and eventually turning it into something people can actually use.
-TYPEPLAY is one of those experiments.
-It started with the idea of making typing more interesting and gradually became a larger exploration of learning experiences, interactive interfaces, browser audio, and building software from scratch.
-Connect with me
-- GitHub
-- LinkedIn
-- Instagram
